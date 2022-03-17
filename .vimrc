@@ -46,7 +46,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'preservim/nerdcommenter'
 Plug 'dense-analysis/ale'
 Plug 'szw/vim-maximizer'
-Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -88,7 +88,9 @@ nnoremap <silent> <leader>- :vertical resize -5<CR>
 nnoremap <leader>t :botright terminal ++rows=15<cr>
 nnoremap <silent> <leader>g :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>f :YcmCompleter FixIt<CR>
+nmap <C-_> <leader>c<space>
 
+let g:tmuxline_preset = 'full'
 let g:ycm_python_interpreter_path = '~/anaconda3/envs/ml/bin/python'
 let g:ycm_python_sys_path = []
 let g:ycm_extra_conf_vim_data = [
