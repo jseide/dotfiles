@@ -6,7 +6,7 @@
 sudo apt-get update
 sudo apt-get install vim
 
-PLUG_FILE = ~/.vim/autoload/plug.vim
+PLUG_FILE=~/.vim/autoload/plug.vim
 
 if [ -f "$PLUG_FILE"]; then
     echo "$PLUG_FILE exists."
