@@ -5,11 +5,9 @@
 # Install Vim and git
 sudo apt-get update
 sudo apt-get install vim
-sudo apt-get install git
 
-#clone dotfiles
-git clone https://github.com/jseide/dotfiles.git
-cd dotfiles
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Make directories
 #mkdir $HOME/.vim
