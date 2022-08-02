@@ -6,8 +6,15 @@
 sudo apt-get update
 sudo apt-get install vim
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+PLUG_FILE = ~/.vim/autoload/plug.vim
+
+if [ -f "$PLUG_FILE"]; then
+    echo "$PLUG_FILE exists."
+else
+    echo "$PLUG_FILE not found; installing vim-plug"
+    #curl -fLo $PLUG_FILE --create-dirs \
+        #https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
 
 # Make directories
 #mkdir $HOME/.vim
