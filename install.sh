@@ -4,7 +4,7 @@
 
 # Install Vim and git
 sudo apt-get update
-sudo apt-get install vim
+sudo apt-get install -y vim tmux build-essential cmake3 python3-dev
 
 PLUG_FILE=~/.vim/autoload/plug.vim
 
@@ -12,9 +12,14 @@ if [ -f "$PLUG_FILE"]; then
     echo "$PLUG_FILE exists."
 else
     echo "$PLUG_FILE not found; installing vim-plug"
-    #curl -fLo $PLUG_FILE --create-dirs \
-        #https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    curl -fLo $PLUG_FILE --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
+
+cp .vimrc $HOME
+cp .tmux.conf $HOME
+
+
 
 # Make directories
 #mkdir $HOME/.vim
