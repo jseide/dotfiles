@@ -59,8 +59,9 @@ filetype plugin on
 if executable('rg')
     let g:rg_derive_root='true'
 endif
-au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+
+"au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+"au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ctrlp_user_command=['.git/','git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let mapleader = " "
