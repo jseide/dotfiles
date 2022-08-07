@@ -20,6 +20,7 @@ fi
 
 cp .vimrc $HOME
 cp .tmux.conf $HOME
+cp global_extra_conf.py $HOME/.vim
 
 vim +'PlugInstall' +qa
 
