@@ -27,6 +27,12 @@ vim +'PlugInstall' +qa
 cd ~/.vim/plugged/YouCompleteMe
 python3 install.py --verbose
 
+#cd ~
+#git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+#tmux source ~/.tmux.conf
+#~/.tmux/plugins/tpm/scripts/install_plugins.sh
+
 
 # Make directories
 #mkdir $HOME/.vim
