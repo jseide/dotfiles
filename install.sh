@@ -27,24 +27,10 @@ vim +'PlugInstall' +qa
 cd ~/.vim/plugged/YouCompleteMe
 python3 install.py --verbose
 
-#cd ~
-#git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+cd ~
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-#tmux source ~/.tmux.conf
-#~/.tmux/plugins/tpm/scripts/install_plugins.sh
+tmux source ~/.tmux.conf
+~/.tmux/plugins/tpm/scripts/install_plugins.sh
 
 
-# Make directories
-#mkdir $HOME/.vim
-#mkdir $HOME/.vim/plugged
-
-# Get colour scheme
-#wget https://gist.githubusercontent.com/thejmazz/3b3495e85478fa16b3de/raw/2ba36babd9060c0221a8b8bddba7af7ea05c6e0c/hybridbrackets.vim
-#mv hybridbrackets.vim $HOME/.vim/colors
-# Get Vundle
-#git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
-# Get .vimrc
-#wget https://gist.githubusercontent.com/thejmazz/6618ded4dae5e02ea836/raw/38016cf08b7a4b27ad70a89c484debd8decb983e/.vimrc
-#mv .vimrc $HOME
-# Install Plugins
-#vim +PluginInstall +qall
