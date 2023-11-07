@@ -1,7 +1,6 @@
-"syntax on
-"set nocompatible
 set secure exrc
 set nu 
+set autowrite
 "set nohlsearch
 "set hidden
 "set noerrorbells
