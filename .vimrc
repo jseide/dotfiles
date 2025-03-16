@@ -36,12 +36,24 @@ filetype plugin indent on "vim-commentary requirement
 "undotree settings 
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir
-set undofile
+" set undodir=~/.vim/undodir
+" set undofile
+if has("persistent_undo")
+   let target_path = expand('~/.vim/undodir')
+
+    " create the directory and any parent directories
+    " if the location does not exist.
+    if !isdirectory(target_path)
+        call mkdir(target_path, "p", 0700)
+    endif
+
+    let &undodir=target_path
+    set undofile
+endif
 
 au BufNewFile,BufRead *.py :set encoding=utf-8
 
-call plug#begin('~/.vim/plugged')
+" call plug#begin('~/.vim/plugged')
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
 "Plug 'gruvbox-community/gruvbox'
@@ -61,7 +73,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'edkolev/tmuxline.vim'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
-call plug#end()
+" call plug#end()
 
 colorscheme gruvbox
 "set colorcolumn=80
@@ -77,6 +89,9 @@ let mapleader = " "
 let g:ctrlp_use_caching = 0
 let g:netrw_browse_split = 4
 let g:netrw_preview = 1
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.jsx,*.tsx"
+
+
 "let g:netrw_banner = 0
 "let g:NERDAltDelims_c = 1 "use alternative comments for C Language
 
@@ -98,6 +113,8 @@ vmap <C-_> gc
 
 
 
+
+
 nnoremap <leader>ps :Rg<SPACE>
 "nnoremap <silent> <leader>+ :vertical resize +5<CR>
 "nnoremap <silent> <leader>- :vertical resize -5<CR>
@@ -114,7 +131,15 @@ let g:UltiSnipsListSnippets="<c-n>"
 let g:UltiSnipsEditSplit="vertical"
 
 let g:ale_completion_enabled = 1
-let g:ale_linters = {'python': ['pylsp']}
+let g:ale_linters = {'python': ['pylsp']} 
+let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint', 'prettier'],
+\   'typescriptreact': ['eslint', 'prettier'],
+\}
+
+" let g:ale_fixers = {‘javascript’: [‘eslint’], ‘typescript’: [‘prettier’, ‘tslint’], ‘scss’: [‘prettier’], ‘html’: [‘prettier’], ‘reason’: [‘refmt’] }
 "let g:ale_python_auto_virtualenv = 1
 "call ch_logfile(expand('/tmp/chlogfile.log'), 'w')
 "let g:ale_fixers = {
